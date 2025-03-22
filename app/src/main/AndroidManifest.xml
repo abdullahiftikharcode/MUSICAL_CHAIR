@@ -2,19 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Camera permissions -->
-    <uses-permission android:name="android.permission.CAMERA"
-        android:maxSdkVersion="32" /> <!-- Needed for legacy Camera API -->
+    <!-- Camera permission (Removed maxSdkVersion) -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- Audio permissions -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" /> <!-- For Android 12 and below -->
+    <!-- Storage & Media permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> <!-- Android 13+ -->
 
-    <!-- Optional: Only include if your app requires camera hardware -->
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
+    <!-- Optional: Only include if your app absolutely requires a camera -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
 
     <application
         android:allowBackup="true"
